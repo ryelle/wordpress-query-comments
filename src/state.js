@@ -53,7 +53,7 @@ function itemsOnPost( state = {}, action ) {
 		case COMMENT_SUBMIT_REQUEST_SUCCESS:
 			if ( ! state[ action.postId ] ) {
 				return Object.assign( {}, state, {
-					[ action.postId ]: action.comment.id
+					[ action.postId ]: [ action.comment.id ]
 				} );
 			}
 			return Object.assign( {}, state, {
