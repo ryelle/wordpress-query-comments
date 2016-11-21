@@ -4,7 +4,11 @@
  */
 import { combineReducers } from 'redux';
 import keyBy from 'lodash/keyBy';
-const site = require( 'wpapi' )( { endpoint: SiteSettings.endpoint, nonce: SiteSettings.nonce } );
+import qs from 'qs';
+import API from 'wordpress-rest-api-oauth-1';
+const api = new API( {
+	url: SiteSettings.endpoint
+} );
 
 /**
  * Comment actions
@@ -148,12 +152,19 @@ export function requestComments( postId ) {
 			postId,
 		} );
 
-		return site.comments().forPost( postId ).order( 'asc' ).then( ( data ) => {
-			dispatch( {
-				type: COMMENTS_REQUEST_SUCCESS,
-				comments: data,
-				count: data._paging.total,
-				postId
+		const query = {
+			order: 'asc',
+			post: postId,
+		};
+
+		api.get( '/wp/v2/comments', query ).then( comments => {
+			requestPageCount( '/wp/v2/comments', query ).then( count => {
+				dispatch( {
+					type: COMMENTS_REQUEST_SUCCESS,
+					comments,
+					count,
+					postId
+				} );
 			} );
 			return null;
 		} ).catch( ( error ) => {
@@ -179,7 +190,7 @@ export function submitComment( comment ) {
 			postId: comment.post,
 		} );
 
-		return site.comments().post( comment ).then( ( data ) => {
+		api.post( '/wp/v2/comments', comment ).then( ( data ) => {
 			dispatch( {
 				type: COMMENT_SUBMIT_REQUEST_SUCCESS,
 				comment: data,
@@ -195,4 +206,32 @@ export function submitComment( comment ) {
 			return error;
 		} );
 	};
+}
+
+// Helper to grab the page count off the header
+function requestPageCount( url, data = null ) {
+	if ( url.indexOf( 'http' ) !== 0 ) {
+		url = `${api.config.url}wp-json${url}`
+	}
+
+	if ( data ) {
+		// must be decoded before being passed to ouath
+		url += `?${decodeURIComponent( qs.stringify( data ) )}`;
+		data = null
+	}
+
+	const headers = {
+		'Accept': 'application/json',
+		'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+	};
+
+	return fetch( url, {
+		method: 'HEAD',
+		headers: headers,
+		mode: 'cors',
+		body: null
+	} )
+	.then( response => {
+		return parseInt( response.headers.get( 'X-WP-TotalPages' ), 10 ) || 1;
+	} );
 }
