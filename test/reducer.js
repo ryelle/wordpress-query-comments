@@ -118,6 +118,43 @@ describe( 'Post reducer', () => {
 			const newState = totals( undefined, {} );
 			expect( newState ).to.eql( {} );
 		} );
+
+		it( 'should track the total comment count for requested posts', () => {
+			const action = {
+				type: COMMENTS_REQUEST_SUCCESS,
+				count: 3,
+				postId: 1,
+			};
+			const newState = totals( undefined, action );
+			expect( newState ).to.eql( { 1: 3 } );
+		} );
+
+		it( 'should track the total comment count for additional requested posts', () => {
+			const originalState = deepFreeze( { 1: 3 } );
+			const action = {
+				type: COMMENTS_REQUEST_SUCCESS,
+				count: 10,
+				postId: 149,
+			};
+			const newState = totals( originalState, action );
+			expect( newState ).to.eql( {
+				1: 3,
+				149: 10
+			} );
+		} );
+
+		it( 'should track the total comment count including submitted comments', () => {
+			const originalState = deepFreeze( { 1: 3 } );
+			const action = {
+				type: COMMENT_SUBMIT_REQUEST_SUCCESS,
+				postId: 2,
+			};
+			const newState = totals( originalState, action );
+			expect( newState ).to.eql( {
+				1: 3,
+				2: 1
+			} );
+		} );
 	} );
 
 	describe( 'isSubmitting', () => {
