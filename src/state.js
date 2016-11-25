@@ -121,7 +121,7 @@ export function isSubmitting( state = {}, action ) {
 		case COMMENT_SUBMIT_REQUEST:
 		case COMMENT_SUBMIT_REQUEST_SUCCESS:
 		case COMMENT_SUBMIT_REQUEST_FAILURE:
-			return Object.assign( {}, state[ action.postId ], { [ action.postId ]: COMMENT_SUBMIT_REQUEST === action.type } );
+			return Object.assign( {}, state, { [ action.postId ]: COMMENT_SUBMIT_REQUEST === action.type } );
 		default:
 			return state;
 	}
