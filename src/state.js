@@ -23,7 +23,7 @@ export const COMMENT_SUBMIT_REQUEST_FAILURE = 'wordpress-redux/comment-submit/RE
  * @param  {Object} action Action payload
  * @return {Object}        Updated state
  */
-function items( state = {}, action ) {
+export function items( state = {}, action ) {
 	switch ( action.type ) {
 		case COMMENTS_REQUEST_SUCCESS:
 			const comments = keyBy( action.comments, 'id' );
@@ -44,7 +44,7 @@ function items( state = {}, action ) {
  * @param  {Object} action Action payload
  * @return {Object}        Updated state
  */
-function itemsOnPost( state = {}, action ) {
+export function itemsOnPost( state = {}, action ) {
 	switch ( action.type ) {
 		case COMMENTS_REQUEST_SUCCESS:
 			return Object.assign( {}, state, {
@@ -73,7 +73,7 @@ function itemsOnPost( state = {}, action ) {
  * @param  {Object} action Action payload
  * @return {Object}        Updated state
  */
-function requests( state = {}, action ) {
+export function requests( state = {}, action ) {
 	switch ( action.type ) {
 		case COMMENTS_REQUEST:
 		case COMMENTS_REQUEST_SUCCESS:
@@ -93,7 +93,7 @@ function requests( state = {}, action ) {
  * @param  {Object} action Action payload
  * @return {Object}        Updated state
  */
-function totals( state = {}, action ) {
+export function totals( state = {}, action ) {
 	switch ( action.type ) {
 		case COMMENTS_REQUEST_SUCCESS:
 			return Object.assign( {}, state[ action.postId ], { [ action.postId ]: action.count } );
@@ -116,7 +116,7 @@ function totals( state = {}, action ) {
  * @param  {Object} action Action payload
  * @return {Object}        Updated state
  */
-function isSubmitting( state = {}, action ) {
+export function isSubmitting( state = {}, action ) {
 	switch ( action.type ) {
 		case COMMENT_SUBMIT_REQUEST:
 		case COMMENT_SUBMIT_REQUEST_SUCCESS:
