@@ -1,0 +1,41 @@
+{
+  "id": 39,
+  "post": 149,
+  "parent": 0,
+  "author": 0,
+  "author_name": "John Saddington",
+  "author_url": "http://john.do/",
+  "date": "2013-03-14T09:29:30",
+  "date_gmt": "2013-03-14T14:29:30",
+  "content": {
+    "rendered": "<p>Video comment.</p>\n<p><iframe width=\"640\" height=\"360\" src=\"http://www.youtube.com/embed/9bZkp7q19f0\" frameborder=\"0\" allowfullscreen></iframe></p>\n"
+  },
+  "link": "http://trunk.wordpress.dev/2013/01/comments/#comment-39",
+  "status": "approved",
+  "type": "comment",
+  "author_avatar_urls": {
+    "24": "http://2.gravatar.com/avatar/2801f5145de98010dd72f1ac6d92938f?s=24&d=mm&r=g",
+    "48": "http://2.gravatar.com/avatar/2801f5145de98010dd72f1ac6d92938f?s=48&d=mm&r=g",
+    "96": "http://2.gravatar.com/avatar/2801f5145de98010dd72f1ac6d92938f?s=96&d=mm&r=g"
+  },
+  "meta": [],
+  "_links": {
+    "self": [
+      {
+        "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/39"
+      }
+    ],
+    "collection": [
+      {
+        "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+      }
+    ],
+    "up": [
+      {
+        "embeddable": true,
+        "post_type": "post",
+        "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/149"
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "id": 2,
+    "post": 1,
+    "parent": 0,
+    "author": 1,
+    "author_name": "admin",
+    "author_url": "",
+    "date": "2016-10-16T20:01:45",
+    "date_gmt": "2016-10-16T20:01:45",
+    "content": {
+      "rendered": "<p>I&#8217;m another comment</p>\n"
+    },
+    "link": "http://trunk.wordpress.dev/2016/10/hello-world/#comment-2",
+    "status": "approved",
+    "type": "comment",
+    "author_avatar_urls": {
+      "24": "http://0.gravatar.com/avatar/06e92fdf4a9a63441dff65945114b47f?s=24&d=mm&r=g",
+      "48": "http://0.gravatar.com/avatar/06e92fdf4a9a63441dff65945114b47f?s=48&d=mm&r=g",
+      "96": "http://0.gravatar.com/avatar/06e92fdf4a9a63441dff65945114b47f?s=96&d=mm&r=g"
+    },
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/2"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/users/1"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/1"
+        }
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "post": 1,
+    "parent": 0,
+    "author": 0,
+    "author_name": "A WordPress Commenter",
+    "author_url": "https://wordpress.org/",
+    "date": "2016-10-12T15:41:41",
+    "date_gmt": "2016-10-12T15:41:41",
+    "content": {
+      "rendered": "<p>Hi, this is a comment.<br />\nTo get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.<br />\nCommenter avatars come from <a href=\"https://gravatar.com\">Gravatar</a>.</p>\n"
+    },
+    "link": "http://trunk.wordpress.dev/2016/10/hello-world/#comment-1",
+    "status": "approved",
+    "type": "comment",
+    "author_avatar_urls": {
+      "24": "http://1.gravatar.com/avatar/d7a973c7dab26985da5f961be7b74480?s=24&d=mm&r=g",
+      "48": "http://1.gravatar.com/avatar/d7a973c7dab26985da5f961be7b74480?s=48&d=mm&r=g",
+      "96": "http://1.gravatar.com/avatar/d7a973c7dab26985da5f961be7b74480?s=96&d=mm&r=g"
+    },
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/1"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/1"
+        }
+      ]
+    }
+  }
+]
