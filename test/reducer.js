@@ -162,5 +162,44 @@ describe( 'Post reducer', () => {
 			const newState = isSubmitting( undefined, {} );
 			expect( newState ).to.eql( {} );
 		} );
+
+		it( 'should track that a comment is being submitted', () => {
+			const action = {
+				type: COMMENT_SUBMIT_REQUEST,
+				postId: 1,
+			};
+			const newState = isSubmitting( undefined, action );
+			expect( newState ).to.eql( { 1: true } );
+		} );
+
+		it( 'should track that a comment has been successfully submitted', () => {
+			const originalState = deepFreeze( { 1: true } );
+			const action = {
+				type: COMMENT_SUBMIT_REQUEST_SUCCESS,
+				postId: 1,
+			};
+			const newState = isSubmitting( originalState, action );
+			expect( newState ).to.eql( { 1: false } );
+		} );
+
+		it( 'should track that a comment has failed to submit', () => {
+			const originalState = deepFreeze( { 1: true } );
+			const action = {
+				type: COMMENT_SUBMIT_REQUEST_FAILURE,
+				postId: 1
+			};
+			const newState = isSubmitting( originalState, action );
+			expect( newState ).to.eql( { 1: false } );
+		} );
+
+		it( 'should track that a second comment is being submitted', () => {
+			const originalState = deepFreeze( { 1: true } );
+			const action = {
+				type: COMMENT_SUBMIT_REQUEST,
+				postId: 2,
+			};
+			const newState = isSubmitting( originalState, action );
+			expect( newState ).to.eql( { ...originalState, 2: true } );
+		} );
 	} );
 } );
