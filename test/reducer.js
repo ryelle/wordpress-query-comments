@@ -88,6 +88,29 @@ describe( 'Post reducer', () => {
 			const newState = requests( undefined, {} );
 			expect( newState ).to.eql( {} );
 		} );
+
+		it( 'should track the requesting state of a new comment', () => {
+			const newState = requests( undefined, { type: COMMENTS_REQUEST, postId: 149 } );
+			expect( newState ).to.eql( { 149: true } );
+		} );
+
+		it( 'should track the requesting state of successful comment requests', () => {
+			const originalState = deepFreeze( { 149: true } );
+			const newState = requests( originalState, { type: COMMENTS_REQUEST_SUCCESS, postId: 149 } );
+			expect( newState ).to.eql( { 149: false } );
+		} );
+
+		it( 'should track the requesting state of failed comment requests', () => {
+			const originalState = deepFreeze( { 149: true } );
+			const newState = requests( originalState, { type: COMMENTS_REQUEST_FAILURE, postId: 149 } );
+			expect( newState ).to.eql( { 149: false } );
+		} );
+
+		it( 'should track the requesting state of additional comment requests', () => {
+			const originalState = deepFreeze( { 149: false } );
+			const newState = requests( originalState, { type: COMMENTS_REQUEST, postId: 1 } );
+			expect( newState ).to.eql( { ...originalState, 1: true } );
+		} );
 	} );
 
 	describe( 'totals', () => {
