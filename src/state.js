@@ -96,12 +96,12 @@ export function requests( state = {}, action ) {
 export function totals( state = {}, action ) {
 	switch ( action.type ) {
 		case COMMENTS_REQUEST_SUCCESS:
-			return Object.assign( {}, state[ action.postId ], { [ action.postId ]: action.count } );
+			return Object.assign( {}, state, { [ action.postId ]: action.count } );
 		case COMMENT_SUBMIT_REQUEST_SUCCESS:
 			if ( ! state[ action.postId ] ) {
-				return Object.assign( {}, state[ action.postId ], { [ action.postId ]: 1 } );
+				return Object.assign( {}, state, { [ action.postId ]: 1 } );
 			}
-			return Object.assign( {}, state[ action.postId ], { [ action.postId ]: parseInt( state[ action.postId ], 10 ) + 1 } );
+			return Object.assign( {}, state, { [ action.postId ]: parseInt( state[ action.postId ], 10 ) + 1 } );
 		default:
 			return state;
 	}
