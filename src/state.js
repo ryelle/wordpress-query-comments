@@ -78,7 +78,7 @@ export function requests( state = {}, action ) {
 		case COMMENTS_REQUEST:
 		case COMMENTS_REQUEST_SUCCESS:
 		case COMMENTS_REQUEST_FAILURE:
-			return Object.assign( {}, state[ action.postId ], { [ action.postId ]: COMMENTS_REQUEST === action.type } );
+			return Object.assign( {}, state, { [ action.postId ]: COMMENTS_REQUEST === action.type } );
 		default:
 			return state;
 	}
