@@ -190,7 +190,7 @@ export function submitComment( comment ) {
 			postId: comment.post,
 		} );
 
-		api.post( '/wp/v2/comments', comment ).then( ( data ) => {
+		return submitCommentRequest( comment ).then( ( data ) => {
 			dispatch( {
 				type: COMMENT_SUBMIT_REQUEST_SUCCESS,
 				comment: data,
@@ -233,5 +233,40 @@ function requestPageCount( url, data = null ) {
 	} )
 	.then( response => {
 		return parseInt( response.headers.get( 'X-WP-TotalPages' ), 10 ) || 1;
+	} );
+}
+
+// Helper to submit the comment with nonce header
+function submitCommentRequest( data ) {
+	const url = `${api.config.url}wp-json/wp/v2/comments`;
+
+	const headers = {
+		'Accept': 'application/json',
+		'X-WP-Nonce': SiteSettings.nonce,
+		'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+	};
+
+	return fetch( url, {
+		method: 'POST',
+		headers: headers,
+		body: qs.stringify( data ),
+		mode: 'same-origin',
+		credentials: 'include',
+	} )
+	.then( response => {
+		return response.text().then( text => {
+			let json;
+			try {
+				json = JSON.parse( text )
+			} catch ( e ) {
+				throw { message: text, code: response.status }
+			}
+
+			if ( response.status >= 300 ) {
+				throw json
+			} else {
+				return json
+			}
+		} );
 	} );
 }
