@@ -11,7 +11,7 @@
     "content": {
       "rendered": "<p>Thanks for all the comments, everyone!</p>\n"
     },
-    "link": "http://trunk.wordpress.dev/2013/01/comments/#comment-43",
+    "link": "https://wpapi.local/2013/01/comments/#comment-43",
     "status": "approved",
     "type": "comment",
     "author_avatar_urls": {
@@ -23,25 +23,25 @@
     "_links": {
       "self": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/43"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/43"
         }
       ],
       "collection": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments"
         }
       ],
       "author": [
         {
           "embeddable": true,
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/users/2"
+          "href": "https://wpapi.local/wp-json/wp/v2/users/2"
         }
       ],
       "up": [
         {
           "embeddable": true,
           "post_type": "post",
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/149"
+          "href": "https://wpapi.local/wp-json/wp/v2/posts/149"
         }
       ]
     }
@@ -58,7 +58,7 @@
     "content": {
       "rendered": "<p>We use these tests all the time! Killer stuff!</p>\n"
     },
-    "link": "http://trunk.wordpress.dev/2013/01/comments/#comment-42",
+    "link": "https://wpapi.local/2013/01/comments/#comment-42",
     "status": "approved",
     "type": "comment",
     "author_avatar_urls": {
@@ -70,19 +70,19 @@
     "_links": {
       "self": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/42"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/42"
         }
       ],
       "collection": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments"
         }
       ],
       "up": [
         {
           "embeddable": true,
           "post_type": "post",
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/149"
+          "href": "https://wpapi.local/wp-json/wp/v2/posts/149"
         }
       ]
     }
@@ -99,7 +99,7 @@
     "content": {
       "rendered": "<p>We are totally going to blog about these tests!</p>\n"
     },
-    "link": "http://trunk.wordpress.dev/2013/01/comments/#comment-41",
+    "link": "https://wpapi.local/2013/01/comments/#comment-41",
     "status": "approved",
     "type": "comment",
     "author_avatar_urls": {
@@ -111,19 +111,19 @@
     "_links": {
       "self": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/41"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/41"
         }
       ],
       "collection": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments"
         }
       ],
       "up": [
         {
           "embeddable": true,
           "post_type": "post",
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/149"
+          "href": "https://wpapi.local/wp-json/wp/v2/posts/149"
         }
       ]
     }
@@ -140,7 +140,7 @@
     "content": {
       "rendered": "<p>Image comment.</p>\n<p><img src=\"http://wptest.io/demo/wp-content/uploads/2013/03/soworthloving-wallpaper.jpg\" alt=\"I Am Worth Loving Wallpaper\" /></p>\n"
     },
-    "link": "http://trunk.wordpress.dev/2013/01/comments/#comment-40",
+    "link": "https://wpapi.local/2013/01/comments/#comment-40",
     "status": "approved",
     "type": "comment",
     "author_avatar_urls": {
@@ -152,19 +152,19 @@
     "_links": {
       "self": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/40"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/40"
         }
       ],
       "collection": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments"
         }
       ],
       "up": [
         {
           "embeddable": true,
           "post_type": "post",
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/149"
+          "href": "https://wpapi.local/wp-json/wp/v2/posts/149"
         }
       ]
     }
@@ -181,7 +181,7 @@
     "content": {
       "rendered": "<p>Comment Depth 10</p>\n<p>Also an author comment.</p>\n"
     },
-    "link": "http://trunk.wordpress.dev/2013/01/comments/#comment-38",
+    "link": "https://wpapi.local/2013/01/comments/#comment-38",
     "status": "approved",
     "type": "comment",
     "author_avatar_urls": {
@@ -193,31 +193,31 @@
     "_links": {
       "self": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/38"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/38"
         }
       ],
       "collection": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments"
         }
       ],
       "author": [
         {
           "embeddable": true,
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/users/2"
+          "href": "https://wpapi.local/wp-json/wp/v2/users/2"
         }
       ],
       "up": [
         {
           "embeddable": true,
           "post_type": "post",
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/149"
+          "href": "https://wpapi.local/wp-json/wp/v2/posts/149"
         }
       ],
       "in-reply-to": [
         {
           "embeddable": true,
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/37"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/37"
         }
       ]
     }
@@ -234,7 +234,7 @@
     "content": {
       "rendered": "<p>Comment Depth 09</p>\n"
     },
-    "link": "http://trunk.wordpress.dev/2013/01/comments/#comment-37",
+    "link": "https://wpapi.local/2013/01/comments/#comment-37",
     "status": "approved",
     "type": "comment",
     "author_avatar_urls": {
@@ -246,30 +246,30 @@
     "_links": {
       "self": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/37"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/37"
         }
       ],
       "collection": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments"
         }
       ],
       "up": [
         {
           "embeddable": true,
           "post_type": "post",
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/149"
+          "href": "https://wpapi.local/wp-json/wp/v2/posts/149"
         }
       ],
       "in-reply-to": [
         {
           "embeddable": true,
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/36"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/36"
         }
       ],
       "children": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments?parent=37"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments?parent=37"
         }
       ]
     }
@@ -286,7 +286,7 @@
     "content": {
       "rendered": "<p>Comment Depth 08</p>\n"
     },
-    "link": "http://trunk.wordpress.dev/2013/01/comments/#comment-36",
+    "link": "https://wpapi.local/2013/01/comments/#comment-36",
     "status": "approved",
     "type": "comment",
     "author_avatar_urls": {
@@ -298,30 +298,30 @@
     "_links": {
       "self": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/36"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/36"
         }
       ],
       "collection": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments"
         }
       ],
       "up": [
         {
           "embeddable": true,
           "post_type": "post",
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/149"
+          "href": "https://wpapi.local/wp-json/wp/v2/posts/149"
         }
       ],
       "in-reply-to": [
         {
           "embeddable": true,
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/35"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/35"
         }
       ],
       "children": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments?parent=36"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments?parent=36"
         }
       ]
     }
@@ -338,7 +338,7 @@
     "content": {
       "rendered": "<p>Comment Depth 07</p>\n"
     },
-    "link": "http://trunk.wordpress.dev/2013/01/comments/#comment-35",
+    "link": "https://wpapi.local/2013/01/comments/#comment-35",
     "status": "approved",
     "type": "comment",
     "author_avatar_urls": {
@@ -350,30 +350,30 @@
     "_links": {
       "self": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/35"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/35"
         }
       ],
       "collection": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments"
         }
       ],
       "up": [
         {
           "embeddable": true,
           "post_type": "post",
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/149"
+          "href": "https://wpapi.local/wp-json/wp/v2/posts/149"
         }
       ],
       "in-reply-to": [
         {
           "embeddable": true,
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/34"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/34"
         }
       ],
       "children": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments?parent=35"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments?parent=35"
         }
       ]
     }
@@ -390,7 +390,7 @@
     "content": {
       "rendered": "<p>Comment Depth 06</p>\n"
     },
-    "link": "http://trunk.wordpress.dev/2013/01/comments/#comment-34",
+    "link": "https://wpapi.local/2013/01/comments/#comment-34",
     "status": "approved",
     "type": "comment",
     "author_avatar_urls": {
@@ -402,30 +402,30 @@
     "_links": {
       "self": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/34"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/34"
         }
       ],
       "collection": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments"
         }
       ],
       "up": [
         {
           "embeddable": true,
           "post_type": "post",
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/149"
+          "href": "https://wpapi.local/wp-json/wp/v2/posts/149"
         }
       ],
       "in-reply-to": [
         {
           "embeddable": true,
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/33"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments/33"
         }
       ],
       "children": [
         {
-          "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments?parent=34"
+          "href": "https://wpapi.local/wp-json/wp/v2/comments?parent=34"
         }
       ]
     }

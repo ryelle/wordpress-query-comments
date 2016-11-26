@@ -10,7 +10,7 @@
   "content": {
     "rendered": "<p>Video comment.</p>\n<p><iframe width=\"640\" height=\"360\" src=\"http://www.youtube.com/embed/9bZkp7q19f0\" frameborder=\"0\" allowfullscreen></iframe></p>\n"
   },
-  "link": "http://trunk.wordpress.dev/2013/01/comments/#comment-39",
+  "link": "https://wpapi.local/2013/01/comments/#comment-39",
   "status": "approved",
   "type": "comment",
   "author_avatar_urls": {
@@ -22,19 +22,19 @@
   "_links": {
     "self": [
       {
-        "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments/39"
+        "href": "https://wpapi.local/wp-json/wp/v2/comments/39"
       }
     ],
     "collection": [
       {
-        "href": "http://trunk.wordpress.dev/wp-json/wp/v2/comments"
+        "href": "https://wpapi.local/wp-json/wp/v2/comments"
       }
     ],
     "up": [
       {
         "embeddable": true,
         "post_type": "post",
-        "href": "http://trunk.wordpress.dev/wp-json/wp/v2/posts/149"
+        "href": "https://wpapi.local/wp-json/wp/v2/posts/149"
       }
     ]
   }
