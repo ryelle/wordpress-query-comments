@@ -158,7 +158,7 @@ export function requestComments( postId ) {
 		};
 
 		api.get( '/wp/v2/comments', query ).then( comments => {
-			requestPageCount( '/wp/v2/comments', query ).then( count => {
+			requestCommentCount( '/wp/v2/comments', query ).then( count => {
 				dispatch( {
 					type: COMMENTS_REQUEST_SUCCESS,
 					comments,
@@ -208,8 +208,8 @@ export function submitComment( comment ) {
 	};
 }
 
-// Helper to grab the page count off the header
-function requestPageCount( url, data = null ) {
+// Helper to grab the total comment count off the header
+function requestCommentCount( url, data = null ) {
 	if ( url.indexOf( 'http' ) !== 0 ) {
 		url = `${api.config.url}wp-json${url}`
 	}
@@ -232,7 +232,7 @@ function requestPageCount( url, data = null ) {
 		body: null
 	} )
 	.then( response => {
-		return parseInt( response.headers.get( 'X-WP-TotalPages' ), 10 ) || 1;
+		return parseInt( response.headers.get( 'X-WP-Total' ), 10 );
 	} );
 }
 
