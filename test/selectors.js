@@ -10,7 +10,6 @@ import keyBy from 'lodash/keyBy';
  */
 import * as selectors from '../src/selectors';
 import commentsOn1 from './fixtures/forPost1';
-// import single from './fixtures/single';
 
 const commentsById = keyBy( commentsOn1, 'id' );
 
@@ -34,7 +33,7 @@ const state = deepFreeze( {
 	}
 } );
 
-describe( 'Post selectors', function() {
+describe( 'Comment selectors', function() {
 	it( 'should contain isRequestingCommentsForPost method', function() {
 		expect( selectors.isRequestingCommentsForPost ).to.be.a( 'function' );
 	} );

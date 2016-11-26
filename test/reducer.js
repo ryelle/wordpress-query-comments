@@ -28,7 +28,7 @@ import commentsOn1 from './fixtures/forPost1';
 import commentsOn149 from './fixtures/forPost149';
 import comment from './fixtures/single';
 
-describe( 'Post reducer', () => {
+describe( 'Comment reducer', () => {
 	describe( 'items', () => {
 		it( 'should have no change by default', () => {
 			const newState = items( undefined, {} );
