@@ -7,7 +7,7 @@ import keyBy from 'lodash/keyBy';
 import qs from 'qs';
 import API from 'wordpress-rest-api-oauth-1';
 const api = new API( {
-	url: SiteSettings.endpoint
+	url: SiteSettings.endpoint,
 } );
 
 /**
@@ -34,7 +34,7 @@ export function items( state = {}, action ) {
 			return Object.assign( {}, state, comments );
 		case COMMENT_SUBMIT_REQUEST_SUCCESS:
 			return Object.assign( {}, state, {
-				[ action.comment.id ]: action.comment
+				[ action.comment.id ]: action.comment,
 			} );
 		default:
 			return state;
@@ -52,16 +52,16 @@ export function itemsOnPost( state = {}, action ) {
 	switch ( action.type ) {
 		case COMMENTS_REQUEST_SUCCESS:
 			return Object.assign( {}, state, {
-				[ action.postId ]: action.comments.map( ( comment ) => comment.id )
+				[ action.postId ]: action.comments.map( ( comment ) => comment.id ),
 			} );
 		case COMMENT_SUBMIT_REQUEST_SUCCESS:
 			if ( ! state[ action.postId ] ) {
 				return Object.assign( {}, state, {
-					[ action.postId ]: [ action.comment.id ]
+					[ action.postId ]: [ action.comment.id ],
 				} );
 			}
 			return Object.assign( {}, state, {
-				[ action.postId ]: [ ...state[ action.postId ], action.comment.id ]
+				[ action.postId ]: [ ...state[ action.postId ], action.comment.id ],
 			} );
 		default:
 			return state;
@@ -136,7 +136,7 @@ export default combineReducers( {
 	itemsOnPost,
 	requests,
 	totals,
-	isSubmitting
+	isSubmitting,
 } );
 
 /**
@@ -163,7 +163,7 @@ export function requestComments( postId ) {
 					type: COMMENTS_REQUEST_SUCCESS,
 					comments,
 					count,
-					postId
+					postId,
 				} );
 			} );
 			return null;
@@ -171,7 +171,7 @@ export function requestComments( postId ) {
 			dispatch( {
 				type: COMMENTS_REQUEST_FAILURE,
 				postId,
-				error
+				error,
 			} );
 		} );
 	};
@@ -201,7 +201,7 @@ export function submitComment( comment ) {
 			dispatch( {
 				type: COMMENT_SUBMIT_REQUEST_FAILURE,
 				postId: comment.post,
-				error
+				error,
 			} );
 			return error;
 		} );
@@ -211,39 +211,39 @@ export function submitComment( comment ) {
 // Helper to grab the total comment count off the header
 function requestCommentCount( url, data = null ) {
 	if ( url.indexOf( 'http' ) !== 0 ) {
-		url = `${api.config.url}wp-json${url}`
+		url = `${ api.config.url }wp-json${ url }`;
 	}
 
 	if ( data ) {
 		// must be decoded before being passed to ouath
-		url += `?${decodeURIComponent( qs.stringify( data ) )}`;
-		data = null
+		url += `?${ decodeURIComponent( qs.stringify( data ) ) }`;
+		data = null;
 	}
 
 	const headers = {
-		'Accept': 'application/json',
-		'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+		Accept: 'application/json',
+		'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
 	};
 
 	return fetch( url, {
 		method: 'HEAD',
 		headers: headers,
 		mode: 'cors',
-		body: null
+		body: null,
 	} )
-	.then( response => {
-		return parseInt( response.headers.get( 'X-WP-Total' ), 10 );
-	} );
+		.then( response => {
+			return parseInt( response.headers.get( 'X-WP-Total' ), 10 );
+		} );
 }
 
 // Helper to submit the comment with nonce header
 function submitCommentRequest( data ) {
-	const url = `${api.config.url}wp-json/wp/v2/comments`;
+	const url = `${ api.config.url }wp-json/wp/v2/comments`;
 
 	const headers = {
-		'Accept': 'application/json',
+		Accept: 'application/json',
 		'X-WP-Nonce': SiteSettings.nonce,
-		'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+		'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
 	};
 
 	return fetch( url, {
@@ -253,20 +253,20 @@ function submitCommentRequest( data ) {
 		mode: 'same-origin',
 		credentials: 'include',
 	} )
-	.then( response => {
-		return response.text().then( text => {
-			let json;
-			try {
-				json = JSON.parse( text )
-			} catch ( e ) {
-				throw { message: text, code: response.status }
-			}
+		.then( response => {
+			return response.text().then( text => {
+				let json;
+				try {
+					json = JSON.parse( text );
+				} catch ( e ) {
+					throw { message: text, code: response.status };
+				}
 
-			if ( response.status >= 300 ) {
-				throw json
-			} else {
-				return json
-			}
+				if ( response.status >= 300 ) {
+					throw json;
+				} else {
+					return json;
+				}
+			} );
 		} );
-	} );
 }

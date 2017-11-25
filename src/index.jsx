@@ -43,11 +43,11 @@ class QueryComments extends Component {
 QueryComments.propTypes = {
 	postId: PropTypes.number.isRequired,
 	requesting: PropTypes.bool,
-	requestComments: PropTypes.func
+	requestComments: PropTypes.func,
 };
 
 QueryComments.defaultProps = {
-	requestComments: () => {}
+	requestComments: () => {},
 };
 
 export default connect(
